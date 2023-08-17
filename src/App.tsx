@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Todolist} from './Todolist';
+import {TaskType, Todolist} from './Todolist';
 import {v1} from 'uuid';
 
 
@@ -10,7 +10,9 @@ export type TodoListType = {
     title: string
     filter: FilterValuesType
 }
-
+type TaskaStateType={
+    [key:string]:Array<TaskType>
+}
 function App() {
 
 
@@ -69,7 +71,7 @@ function App() {
         delete tasksObj[todoListId]
         setTasks({...tasksObj})
     }
-    let [tasksObj, setTasks] = useState({
+    let [tasksObj, setTasks] = useState<TaskaStateType>({
         [todoListId1]: [
             {id: v1(), title: "HTML&CSS", isDone: true},
             {id: v1(), title: "JS", isDone: true},

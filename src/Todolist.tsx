@@ -2,13 +2,13 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import {logDOM} from "@testing-library/react";
 
-type TaskType = {
+ export type TaskType = {
     id: string
     title: string
     isDone: boolean
 }
 
-type PropsType = {
+export type PropsType = {
     id: string
     title: string
     tasks: Array<TaskType>
